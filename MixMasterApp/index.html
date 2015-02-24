@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html ng-app="MixMaster">
+<head>
+    <meta charset="utf-8" />
+    <title>MixMasterApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--<script src="scripts/shim/winstore-compat.js"></script>-->
+    
+    <!-- MixMasterApp references -->
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
+    
+</head>
+<body>
+
+    <section id="container">
+
+        <div ng-include='"templates/header.html"'></div>
+        <div ng-include='"templates/leftnav.html"'></div>
+        <div ng-view></div>
+
+    </section>
+
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <script src="scripts/angular/angular.min.js"></script>
+    <script src="scripts/angular/angular-route.min.js"></script>
+    <script src="scripts/angular/angular-resource.min.js"></script>
+
+    <script src="scripts/angular-ui/ui-bootstrap.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controller.js"></script>
+    <script src="scripts/services.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+
+        <div class="row">
+            <div class="col-lg-9 main-chart">
+
+                <div class="row mt">
+
+                    <div class="col-md-4 col-sm-4 mb" ng-repeat="occasion in occasionData.occasionsList">
+                        <div class="white-panel pn">
+                            <div class="white-header">
+                                <h5>{{occasion.name}}</h5>
+                            </div>
+
+                            <div class="centered">
+                                <a href="#drinks/for/{{occasion.id}}"><img src="http://assets.absolutdrinks.com/actions/200x300/muddle.png" width="120"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div><!-- /row -->
+    </section>
+</section>
+
