@@ -12,8 +12,12 @@ app.config(['$routeProvider', function ($routeProvider) {
         // Pages
         .when("/occasions", { templateUrl: "views/occasions.html", controller: "OccasionController" })
         .when("/drinks/:filter/:id", { templateUrl: "views/drink-results.html", controller: "DrinkResultsController" })
-        .when("/drinks/:id", { templateUrl: "views/drink-detail.html", controller: "DrinkDetailController" })
+        .when("/drink/:id", { templateUrl: "views/drink-detail.html", controller: "DrinkDetailController" })
+}]);
 
+//Allows for internal app links
+app.config(['$compileProvider', function ($compileProvider) {
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|file|ms-appx):/);
 }]);
 
 

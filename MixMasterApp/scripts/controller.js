@@ -3,7 +3,7 @@
 angular.module('MixMaster.Controllers', [])
     .controller('OccasionController', ['$scope', 'Occasions', function ($scope, Occasions) {
 
-        console.log('OccasionController');
+        console.log('In OccasionController');
 
         $scope.occasionData = {
             occasionsList: []
@@ -13,16 +13,40 @@ angular.module('MixMaster.Controllers', [])
             $scope.occasionData.occasionsList = data.result;
         });
 
-
     }])    
     .controller('DrinkResultsController', ['$scope', '$routeParams', 'Drinks', function ($scope, $routeParams, Drinks) {
 
-        console.log('DrinkResultsController');
+        console.log('In DrinkResultsController');
+
+        $scope.filter = $routeParams.filter;
+        $scope.id = $routeParams.id;
+                
+        $scope.drinkData = {
+            drinksList: []
+        };
+
+        Drinks.list({
+            filter: $scope.filter,
+            id: $scope.id
+        }, function (data) {
+            $scope.drinkData.drinksList = data.result;
+        });
         
 
     }])
-    .controller('DrinkDetailController', ['$scope', '$routeParams', 'Drink', function ($scope, $routeParams, Drink) {
+    .controller('DrinkDetailController', ['$scope', '$routeParams', 'Drinks', function ($scope, $routeParams, Drinks) {
 
         console.log('DrinkDetailController');  
 
+        $scope.id = $routeParams.id;
+
+        $scope.drinkData = {
+            drinkList: []
+        };
+
+        Drinks.byid({
+            id: $scope.id
+        }, function (data) {
+            $scope.drinkData.drinksList = data.result;
+        });
     }]);

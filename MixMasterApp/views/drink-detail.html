@@ -4,7 +4,7 @@
 
         <div class="row mt">
             <div class="col-lg-9">
-                <h3>NAME</h3>
+                <h3>{{drinkData.drinksList[0].name}}</h3>
 
                 <div class="col-md-8 col-sm-8 mb">
                     <div class="white-panel pn-lg">
@@ -13,7 +13,7 @@
                         </div>
 
                         <div class="centered">
-                            <p>STORY</p>
+                            <p>{{drinkData.drinksList[0].story}}</p>
                         </div>
                     </div>
                 </div>
@@ -21,11 +21,11 @@
                 <div class="col-md-4 col-sm-4 mb">
                     <div class="white-panel pnl-lg">
                         <div class="white-header">
-                            <h5>NAME</h5>
+                            <h5>{{drinkData.drinksList[0].name}}</h5>
                         </div>
 
                         <div class="centered">
-                            <img />
+                            <img src="http://assets.absolutdrinks.com/drinks/300x400/{{drinkData.drinksList[0].id}}.png">
                         </div>
                     </div>
                 </div>
@@ -46,8 +46,8 @@
 
                         <div class="centered">
                             <ul>
-                                <li>
-                                    <p>TEXT</p>
+                                <li ng-repeat="ingredient in drinkData.drinksList[0].ingredients">
+                                    <p>{{ingredient.textPlain}}</p>
                                 </li>
                             </ul>
 
@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="centered">
-                            <p>DESCRIPTION</p>
+                            <p>{{drinkData.drinksList[0].descriptionPlain}}</p>
                         </div>
                     </div>
                 </div>
